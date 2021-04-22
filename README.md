@@ -19,7 +19,7 @@ _originally built April 22, 2021_
 | Pastry (3)                   | 5     |
 
 ## Setup and Installation
-_the code only depends on just a few built-in namespaces which will be brought into the picture by following these steps_
+_the code depends on just a few built-in namespaces which will be brought into the picture by following these steps_
 
 1. Use a termainl or console to navigate to the desired directory for this project
 2. Clone the project to your machine:
@@ -38,6 +38,16 @@ _the code only depends on just a few built-in namespaces which will be brought i
 * [MSTest Configuration and Setup](https://www.learnhowtoprogram.com/c-and-net/test-driven-development-with-c/mstest-configuration-and-setup)
 
 ### Specs
+| Test                                                                    | Input                    | Output |
+|-------------------------------------------------------------------------|--------------------------|--------|
+| Bread constructor returns an instance whose type is Bread               | type of (new Bread)      | Bread  |
+| Bread instance returns an integer at field LoavesInOrder                | Get(LoavesInOrder)       | 4      |
+| Static method PriceOfBreads returns integer when LoavesInOrder is 1     | Bread.PriceOfBreads()    | 5      |
+| PriceOfBreads returns accurate integer when LoavesInOrder is 5          | Bread.PriceOfBreads()    | 20     |
+| Pastry constructor returns an instance whose type is Pastry             | type of (new Pastry)     | Pastry |
+| Pastry instance returns integer from field PastriesInOrder              | Get(PastriesInOrder)     | 32     |
+| Static method PriceOfPastries returns integer when PastriesInOrder is 1 | Pastry.PriceOfPastries() | 2      |
+| PriceOfPastries returns accurate integer when PastriesInOrder is 17     | Pastry.PriceOfPastries() | 19     |
 
 ### Technologies Used
 * _C# and .net5.0_
