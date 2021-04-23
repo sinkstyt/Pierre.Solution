@@ -6,7 +6,7 @@ namespace Pierre
 
     public Bread(int loavesInOrder)
     {
-      LoavesInOrder = loavesInOrder + 6;
+      LoavesInOrder = loavesInOrder;
     }
   }
 }
