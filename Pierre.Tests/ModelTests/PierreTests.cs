@@ -18,5 +18,14 @@ namespace Pierre.Tests
       Bread FreshLoaf = new Bread(1);
       Assert.AreEqual(typeof(Bread), FreshLoaf.GetType());
     }
+
+    [TestMethod]
+    public void LoavesInOrder_ReturnsIntegerMatchingLoavesOrdered_4()
+    {
+      int orderSize = 4;
+      Bread moreBreads = new Bread(orderSize);
+      int receivedNumber = moreBreads.LoavesInOrder;
+      Assert.AreEqual(4, receivedNumber);
+    }
   }
 }
