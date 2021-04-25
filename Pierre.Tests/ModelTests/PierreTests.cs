@@ -1,17 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Pierre;
+using Pierre.Models;
 
 namespace Pierre.Tests
 {
   [TestClass]
   public class PierreTests
   {
-    [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
-    {
-      // testing code found here
-    }
-
     [TestMethod]
     public void BreadConstructor_CreatesInstanceWhoseTypeIsBread_Bread()
     {
@@ -27,5 +21,24 @@ namespace Pierre.Tests
       int receivedNumber = moreBreads.LoavesInOrder;
       Assert.AreEqual(4, receivedNumber);
     }
+
+    [TestMethod]
+    public void PriceOfBreads_ReturnsIntegerWhenLoavesInOrderIs1_4()
+    {
+      int orderSize = 4;
+      Bread FiveLoaves = new Bread(orderSize);
+      int expected = 4;
+      Assert.AreEqual(expected, FiveLoaves.LoavesInOrder);
+    }
+
+    // [TestMethod]
+    // public void PriceOfBreads_ReturnsIntegerMeaningPriceWhileLoavesInOrderIs1_5()
+    // {
+    //   int orderSize = 1;
+    //   Bread SmallOrder = new Bread(orderSize);
+    //   int expectedPrice = 5;
+    //   int received = SmallOrder.PriceOfLoaves();
+    //   Assert.AreEqual(expectedPrice, received);
+    // }
   }
 }
