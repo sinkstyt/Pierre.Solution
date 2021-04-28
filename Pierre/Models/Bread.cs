@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+
 namespace Pierre.Models
+
 {
   public class Bread
   {
@@ -13,12 +16,20 @@ namespace Pierre.Models
     public static int PriceOfLoaves()
     {
       int SubTotal = 0;
-      // GetAll instances of Bread
+      // GetAllBreads() gathers all instances of Bread
 
       // iterate through all Breads, add calculated price of breads to SubTotal each time through
 
       // return SubTotal after loop
       return SubTotal;
+    }
+
+    public static List<Bread> GetAllBreads()
+    {
+      // List<string> groceryList = new List<string> {};
+      List<Bread> allBreads = new List<Bread>{};
+      
+      return allBreads;
     }
   }
 }

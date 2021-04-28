@@ -25,10 +25,11 @@ namespace Pierre.Tests
     [TestMethod]
     public void PriceOfBreads_ReturnsIntegerWhenLoavesInOrderIs1_4()
     {
-      int orderSize = 4;
-      Bread FiveLoaves = new Bread(orderSize);
-      int expected = 4;
-      Assert.AreEqual(expected, FiveLoaves.LoavesInOrder);
+      int orderSize = 1;
+      Bread justALoaf = new Bread(orderSize);
+      int price = Bread.PriceOfLoaves();
+      int expected = 5;
+      Assert.AreEqual(expected, price);
     }
 
     // [TestMethod]
