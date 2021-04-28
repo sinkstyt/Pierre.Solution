@@ -11,6 +11,7 @@ namespace Pierre.Tests
     public void Dispose()
     {
       Bread.ClearAll();
+      Pastry.ClearAll();
     }
 
     [TestMethod]

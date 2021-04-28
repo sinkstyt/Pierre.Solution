@@ -17,7 +17,24 @@ namespace Pierre.Models
 
     public static int PriceOfPastries()
     {
-      return 2;
+      int pastryCost = 0;
+      int countOfAllPastries = 0;
+      foreach (Pastry instance in _allPastries)
+      {
+        countOfAllPastries += instance.PastryCount;
+        pastryCost += instance.PastryCount * instance.CostPerPastry;
+      }
+      if (countOfAllPastries >= 3)
+      {
+        int groupsOfThree = Convert.ToInt32(Math.Floor((decimal)countOfAllPastries / 3 ));
+        pastryCost -= groupsOfThree;
+      }
+      return pastryCost;
+    }
+    
+    public static void ClearAll()
+    {
+      _allPastries.Clear();
     }
   }
 }
