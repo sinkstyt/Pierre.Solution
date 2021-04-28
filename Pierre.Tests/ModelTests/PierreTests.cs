@@ -86,5 +86,15 @@ namespace Pierre.Tests
       int result = Pastry.PriceOfPastries();
       Assert.AreEqual(expectedPrice, result);
     }
+
+    [TestMethod]
+    public void PriceOfPastries_ReturnsAccuratePriceIntegerWhenPastriesInOrderIs17_29()
+    {
+      int pastriesCraved = 17;
+      Pastry ordered = new Pastry(pastriesCraved);
+      int expectedPrice = 29;
+      int result = Pastry.PriceOfPastries();
+      Assert.AreEqual(expectedPrice, result);
+    }
   }
 }

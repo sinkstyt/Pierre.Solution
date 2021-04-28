@@ -48,7 +48,7 @@ _the code depends on just a few built-in namespaces which will be brought into t
 | Pastry constructor returns an instance whose type is Pastry             | type of (new Pastry)     | Pastry |
 | Pastry instance returns integer from field PastriesInOrder              | Get(PastriesInOrder)     | 32     |
 | Static method PriceOfPastries returns integer when PastriesInOrder is 1 | Pastry.PriceOfPastries() | 2      |
-| PriceOfPastries returns accurate integer when PastriesInOrder is 17     | Pastry.PriceOfPastries() | 19     |
+| PriceOfPastries returns accurate integer when PastriesInOrder is 17     | Pastry.PriceOfPastries() | 29     |
 | Static method GetAll returns a List including all Pastry instances      | Pastry.GetAllPastries()  | List   |
 
 ### Technologies Used
