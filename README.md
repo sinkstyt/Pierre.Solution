@@ -2,11 +2,11 @@
 
 ### Author _Tyler Sinks_
 _originally built April 22, 2021_
+_last major revision April 28, 2021_
 
 ## Description
 * runs from the console
 * calculates order totals
-* uses at least two classes
 * written in C# using the .Net framework (v5.0.100)
 * free of gluten, but laden with gluten instances
 * uses this price scheme:
@@ -17,6 +17,8 @@ _originally built April 22, 2021_
 | Bread (3)                    | 10    |
 | Pastry                       | 2     |
 | Pastry (3)                   | 5     |
+
+* _in other words: Loaves of bread are buy 2 get 1 free. Pastries are $1 off for every three._
 
 ## Setup and Installation
 _the code depends on just a few built-in namespaces which will be brought into the picture by following these steps_
