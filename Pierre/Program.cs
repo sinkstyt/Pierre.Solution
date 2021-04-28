@@ -12,12 +12,7 @@ namespace Pierre
       Console.ForegroundColor = ConsoleColor.DarkBlue;
       Console.WriteLine("Welcome to Pierre's Bakery in the Console");
       DisplayPrices();
-      ShowMainMenu();    
-
-    // Pass number of Breads.WithType through price calculator and add to OrderTotal
-
-    // Cart Show: Print to Console all OrderDetails including TotalOrder for Price
-
+      ShowMainMenu();
     }
 
     static void ShowMainMenu()
@@ -25,16 +20,15 @@ namespace Pierre
       WriteAsterisksLine("             *** Main Menu *** ");
       Console.WriteLine();      
       Console.WriteLine("To add baked goods to your order, enter 1");
-      Console.WriteLine("To see all baked goods ordered and order total, enter 2");
+      Console.WriteLine("View your cart and order total, enter 2");
       Console.WriteLine("To leave, enter anything else -- even <ENTER>");
-
       string userWants = Console.ReadLine();
       if (userWants == "1") {
         AddToOrder();
       }
       else if (userWants == "2")
       {
-        // ShowCart();
+        CartShow();
       }
       else
       {
@@ -53,25 +47,50 @@ namespace Pierre
         WriteAsterisksLine("   How many loaves would you like?");
         int breadsWanted = Convert.ToInt32(Console.ReadLine());
         Bread freshLoaf = new Bread(breadsWanted);
-
       }
       else if (userCommand == Convert.ToChar("2") || userCommand == 'p' || userCommand == 'P')
       {
         WriteAsterisksLine("   How many pastries would you like?");
         int pastriesWanted = Convert.ToInt32(Console.ReadLine());
         Pastry freshPastry = new Pastry(pastriesWanted);
-        
       }
-
       ShowMainMenu();
     }
 
     static void CartShow()
     {
-      // show all Breads and Pastries
-
-      // Ask for correct? or make changes or start over
-
+      WriteAsterisksLine("   ****  your order  *****");
+      Console.WriteLine();
+      List<Bread> breads = Bread.GetAllBreads();
+      List<Pastry> pastries = Pastry.GetAllPastries();
+      int orderTotal = 0;
+      int breadCount = 0;
+      int pieCount = 0;
+      foreach(Bread loaf in breads)
+      {
+        breadCount += loaf.LoavesInOrder;
+      }
+      foreach(Pastry pie in pastries)
+      {
+        pieCount += pie.PastryCount;
+      }
+      orderTotal = Pastry.PriceOfPastries();
+      orderTotal += Bread.PriceOfLoaves();
+      Console.WriteLine("Loaves of bread in your current order: {0}", breadCount);
+      Console.WriteLine("Pastries you have ordered: {0}", pieCount);
+      string priceConfirm = "   * T O T A L * for this * O R D E R *   $ "+orderTotal;
+      WriteAsterisksLine(priceConfirm);
+      Console.WriteLine();
+      WriteAsterisksLine("  ** Does this look correct? (y or n) **");
+      string looksGood = Console.ReadLine();
+      if (looksGood == "y" || looksGood == "Y")
+      {
+        Console.WriteLine("Wonderful. Thanks for your business!");
+      }
+      else
+      {
+        ShowMainMenu();
+      }
     }
 
     static void DisplayPrices()
@@ -85,6 +104,7 @@ namespace Pierre
       WriteAsterisksLine(" ** 1 pastry is $2. ** For three pastries: $5. ** ");
       Console.WriteLine();
     }
+
     static void WriteAsterisksLine(string value)
     {
         Console.BackgroundColor = ConsoleColor.DarkRed;
