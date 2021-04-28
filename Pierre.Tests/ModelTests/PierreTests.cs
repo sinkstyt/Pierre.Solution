@@ -1,11 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pierre.Models;
+using System;
 
 namespace Pierre.Tests
 {
   [TestClass]
-  public class PierreTests
+  public class PierreTests : IDisposable
   {
+    public void Dispose()
+    {
+      Bread.ClearAll();
+    }
+
     [TestMethod]
     public void BreadConstructor_CreatesInstanceWhoseTypeIsBread_Bread()
     {
@@ -31,6 +37,8 @@ namespace Pierre.Tests
       int expected = 5;
       Assert.AreEqual(expected, price);
     }
+    // Matcher for LISTS in MS Test:
+    // CollectionAssert.AreEqual(newList, result);
 
     // [TestMethod]
     // public void PriceOfBreads_ReturnsIntegerMeaningPriceWhileLoavesInOrderIs1_5()
