@@ -76,5 +76,15 @@ namespace Pierre.Tests
       int receivedNumber = wholeLottaPastries.PastryCount;
       Assert.AreEqual(31, receivedNumber);
     }
+
+    [TestMethod]
+    public void PriceOfPastries_ReturnsAccuratePriceOfOnePastry_2()
+    {
+      int pastriesDesired = 1;
+      Pastry ordered = new Pastry(pastriesDesired);
+      int expectedPrice = 2;
+      int result = Pastry.PriceOfPastries();
+      Assert.AreEqual(expectedPrice, result);
+    }
   }
 }

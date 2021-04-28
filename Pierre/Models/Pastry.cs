@@ -14,5 +14,10 @@ namespace Pierre.Models
       PastryCount = pastryCount;
       _allPastries.Add(this);
     }
+
+    public static int PriceOfPastries()
+    {
+      return 35;
+    }
   }
 }
