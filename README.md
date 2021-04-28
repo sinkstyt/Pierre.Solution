@@ -21,7 +21,7 @@ _originally built April 22, 2021_
 ## Setup and Installation
 _the code depends on just a few built-in namespaces which will be brought into the picture by following these steps_
 
-1. Use a termainl or console to navigate to the desired directory for this project
+1. Use terminal or console to navigate to the desired directory for this project
 2. Clone the project to your machine:
 > ` $ git clone https://github.com/sinkstyt/Pierre.Solution.git `
 3. Change directory into the project's root folder:
