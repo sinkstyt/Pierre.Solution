@@ -44,10 +44,12 @@ _the code depends on just a few built-in namespaces which will be brought into t
 | Bread instance returns an integer at field LoavesInOrder                | Get(LoavesInOrder)       | 4      |
 | Static method PriceOfBreads returns integer when LoavesInOrder is 1     | Bread.PriceOfBreads()    | 5      |
 | PriceOfBreads returns accurate integer when LoavesInOrder is 5          | Bread.PriceOfBreads()    | 20     |
+| Static method GetAll returns a List including all Bread instances       | Bread.PriceOfBreads()    | 20     |
 | Pastry constructor returns an instance whose type is Pastry             | type of (new Pastry)     | Pastry |
 | Pastry instance returns integer from field PastriesInOrder              | Get(PastriesInOrder)     | 32     |
 | Static method PriceOfPastries returns integer when PastriesInOrder is 1 | Pastry.PriceOfPastries() | 2      |
 | PriceOfPastries returns accurate integer when PastriesInOrder is 17     | Pastry.PriceOfPastries() | 19     |
+| Static method GetAll returns a List including all Pastry instances      | Pastry.PriceOfPastries() | 19     |
 
 ### Technologies Used
 * _C# and .net5.0_
