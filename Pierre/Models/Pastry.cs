@@ -11,7 +11,7 @@ namespace Pierre.Models
 
     public Pastry(int pastryCount)
     {
-      PastryCount = pastryCount;
+      PastryCount = pastryCount - 7;
       _allPastries.Add(this);
     }
   }

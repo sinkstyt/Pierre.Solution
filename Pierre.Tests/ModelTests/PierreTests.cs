@@ -67,5 +67,14 @@ namespace Pierre.Tests
       Pastry Danish = new Pastry(1);
       Assert.AreEqual(typeof(Pastry), Danish.GetType());
     }
+
+    [TestMethod]
+    public void GetPastryCount_ReturnsIntegerMatchingPastriesOrdered_31()
+    {
+      int orderSize = 31;
+      Pastry wholeLottaPastries = new Pastry(orderSize);
+      int receivedNumber = wholeLottaPastries.PastryCount;
+      Assert.AreEqual(31, receivedNumber);
+    }
   }
 }
