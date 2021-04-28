@@ -34,9 +34,7 @@ namespace Pierre.Models
 
     public static List<Pastry> GetAllPastries()
     {
-      Pastry croissant = new Pastry(1);
-      List<Pastry> goodFail = new List<Pastry> { croissant };
-      return goodFail;
+      return _allPastries;
     }
     
     public static void ClearAll()
