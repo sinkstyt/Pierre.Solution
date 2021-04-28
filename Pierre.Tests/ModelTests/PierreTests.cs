@@ -60,5 +60,12 @@ namespace Pierre.Tests
       List<Bread> result = Bread.GetAllBreads();
       CollectionAssert.AreEqual(expectedList, result);
     }
+
+    [TestMethod]
+    public void PastryConstructor_CreatesInstanceWhoseTypeIsPastry_Pastry()
+    {
+      Pastry Danish = new Pastry(1);
+      Assert.AreEqual(typeof(Pastry), Danish.GetType());
+    }
   }
 }
