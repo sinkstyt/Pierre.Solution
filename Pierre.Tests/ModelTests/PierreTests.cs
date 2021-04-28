@@ -97,5 +97,17 @@ namespace Pierre.Tests
       int result = Pastry.PriceOfPastries();
       Assert.AreEqual(expectedPrice, result);
     }
+
+    [TestMethod]
+    public void GetAllPastries_ReturnsListOfAllPastriesInstantiated_ListOfAllPastries()
+    {
+      int firstOrder = 7;
+      int secondOrder = 13;
+      Pastry earlyRiser = new Pastry(firstOrder);
+      Pastry nextPlease = new Pastry(secondOrder);
+      List<Pastry> expectedList = new List<Pastry> { earlyRiser, nextPlease };
+      List<Pastry> result = Pastry.GetAllPastries();
+      CollectionAssert.AreEqual(expectedList, result);
+    }
   }
 }

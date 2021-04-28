@@ -31,6 +31,13 @@ namespace Pierre.Models
       }
       return pastryCost;
     }
+
+    public static List<Pastry> GetAllPastries()
+    {
+      Pastry croissant = new Pastry(1);
+      List<Pastry> goodFail = new List<Pastry> { croissant };
+      return goodFail;
+    }
     
     public static void ClearAll()
     {
