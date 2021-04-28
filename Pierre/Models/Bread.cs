@@ -35,8 +35,8 @@ namespace Pierre.Models
 
     public static List<Bread> GetAllBreads()
     {
-      // List<string> groceryList = new List<string> {};
-      List<Bread> allBreads = new List<Bread>{};
+      int newOrderSize = 12;
+      List<Bread> allBreads = new List<Bread>{ new Bread(newOrderSize)};
       
       return allBreads;
     }

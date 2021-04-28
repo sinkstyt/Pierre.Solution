@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pierre.Models;
 using System;
+using System.Collections.Generic;
 
 namespace Pierre.Tests
 {
@@ -48,7 +49,16 @@ namespace Pierre.Tests
       Assert.AreEqual(expectedPrice, received);
     }
 
-    // Matcher for LISTS in MS Test:
-    // CollectionAssert.AreEqual(newList, result);
+    [TestMethod]
+    public void GetAllBreads_ReturnsListOfAllBreadsInstantiated_ListOfAllBreads()
+    {
+      int firstOrder = 3;
+      int secondOrder = 4;
+      Bread earlyRiser = new Bread(firstOrder);
+      Bread nextPlease = new Bread(secondOrder);
+      List<Bread> expectedList = new List<Bread> { earlyRiser, nextPlease };
+      List<Bread> result = Bread.GetAllBreads();
+      CollectionAssert.AreEqual(expectedList, result);
+    }
   }
 }
