@@ -17,7 +17,7 @@ namespace Pierre.Models
 
     public static int PriceOfPastries()
     {
-      return 35;
+      return 2;
     }
   }
 }
