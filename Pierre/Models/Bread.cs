@@ -35,10 +35,7 @@ namespace Pierre.Models
 
     public static List<Bread> GetAllBreads()
     {
-      int newOrderSize = 12;
-      List<Bread> allBreads = new List<Bread>{ new Bread(newOrderSize)};
-      
-      return allBreads;
+      return _allBreads;
     }
 
     public static void ClearAll()
