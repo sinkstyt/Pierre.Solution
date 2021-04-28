@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace Pierre.Models
 
@@ -22,17 +23,13 @@ namespace Pierre.Models
       foreach (Bread order in _allBreads)
       {
         allLoavesCount += order.LoavesInOrder;
-        SubTotal += order.CostPerLoaf * order.LoavesInOrder;
+        SubTotal += order.LoavesInOrder * order.CostPerLoaf;
       }
-      // if (allLoavesCount >= 2) buy 2, get 1 free
-      // {
-      //   apply discount
-      // }
-
-      // iterate through all Breads, add calculated price of breads to SubTotal each time through
-
-
-      // return SubTotal after loop
+      if (allLoavesCount >= 2)
+      {
+        int groupsOfThree = Convert.ToInt32(Math.Floor((decimal)allLoavesCount / 3 ));
+        SubTotal -= groupsOfThree * _allBreads[0].CostPerLoaf;
+      }
       return SubTotal;
     }
 
