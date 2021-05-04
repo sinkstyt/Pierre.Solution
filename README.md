@@ -1,8 +1,8 @@
 # Console Application for Pierre's Bakery
 
 ### Author _Tyler Sinks_
-_originally built April 22, 2021_
-_last major revision April 28, 2021_
+* _originally built April 22, 2021_
+* _revisions made April 28 &amp; May 4, 2021_
 
 ## Description
 * runs from the console
@@ -18,7 +18,9 @@ _last major revision April 28, 2021_
 | Pastry                       | 2     |
 | Pastry (3)                   | 5     |
 
-* _in other words: Loaves of bread are buy 2 get 1 free. Pastries are $1 off for every three._
+#### **In other words, the discounts are:**
+* _Loaves of bread are buy 2 get 1 free._
+* _Pastries are $1 off for every three._
 
 ## Setup and Installation
 _the code depends on just a few built-in namespaces which will be brought into the picture by following these steps_
@@ -32,10 +34,16 @@ _the code depends on just a few built-in namespaces which will be brought into t
 > ` $ dotnet restore Pierre Pierre.Tests `
 5. To use the project:
 > ` $ dotnet run `
-6. Or, to examine the files in VS Code instead of step 5:
+6. To run the full test suite and see output in the console:
+> ` $ cd Pierre.Tests `<br />
+> ` $ dotnet test `
+7. Or, to examine the files in VS Code:
 > ` $ code . `
 
-#### For those completely new to C# and dotnet, please see these detailed instructions:
+#### If step 7, launching Visual Studio Code from the command line, is not working for you
+* [Visit Visual Studio Code Docs](https://code.visualstudio.com/docs/editor/command-line#_launching-from-command-line) _for operating system specific help_
+
+#### For those completely new to C# and .NET, these detailed resources might help:
 * [Installing C# and .NET](https://www.learnhowtoprogram.com/c-and-net-part-time-c-and-react-track/getting-started-with-c/installing-c-and-net)
 * [MSTest Configuration and Setup](https://www.learnhowtoprogram.com/c-and-net/test-driven-development-with-c/mstest-configuration-and-setup)
 
