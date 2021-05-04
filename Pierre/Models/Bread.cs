@@ -8,6 +8,8 @@ namespace Pierre.Models
     public int LoavesInOrder { get; set; }
     public int CostPerLoaf = 5;
     private static List<Bread> _allBreads = new List<Bread> {};
+    public int TotalBreadCost { get; }
+    public int AllLoavesCount { get; }
     
     public Bread(int loavesInOrder)
     {
@@ -17,19 +19,19 @@ namespace Pierre.Models
 
     public static int PriceOfLoaves()
     {
-      int SubTotal = 0;
-      int allLoavesCount = 0;
+      int AllLoavesCount = 0;
+      int TotalBreadCost = 0;
       foreach (Bread order in _allBreads)
       {
-        allLoavesCount += order.LoavesInOrder;
-        SubTotal += order.LoavesInOrder * order.CostPerLoaf;
+        AllLoavesCount += order.LoavesInOrder;
+        TotalBreadCost += order.LoavesInOrder * order.CostPerLoaf;
       }
-      if (allLoavesCount >= 2)
+      if (AllLoavesCount >= 2)
       {
-        int groupsOfThree = Convert.ToInt32(Math.Floor((decimal)allLoavesCount / 3 ));
-        SubTotal -= groupsOfThree * _allBreads[0].CostPerLoaf;
+        int groupsOfThree = Convert.ToInt32(Math.Floor((decimal)AllLoavesCount / 3 ));
+        TotalBreadCost -= groupsOfThree * _allBreads[0].CostPerLoaf;
       }
-      return SubTotal;
+      return TotalBreadCost;
     }
 
     public static List<Bread> GetAllBreads()

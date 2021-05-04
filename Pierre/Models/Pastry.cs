@@ -8,6 +8,8 @@ namespace Pierre.Models
     public int PastryCount { get; set; }
     public int CostPerPastry = 2;
     private static List<Pastry> _allPastries = new List<Pastry> {};
+    public int TotalPastriesCost { get; }
+    public int AllPastriesCount { get; }
 
     public Pastry(int pastryCount)
     {
@@ -17,19 +19,19 @@ namespace Pierre.Models
 
     public static int PriceOfPastries()
     {
-      int pastryCost = 0;
-      int countOfAllPastries = 0;
+      int TotalPastriesCost = 0;
+      int AllPastriesCount = 0;
       foreach (Pastry instance in _allPastries)
       {
-        countOfAllPastries += instance.PastryCount;
-        pastryCost += instance.PastryCount * instance.CostPerPastry;
+        AllPastriesCount += instance.PastryCount;
+        TotalPastriesCost += instance.PastryCount * instance.CostPerPastry;
       }
-      if (countOfAllPastries >= 3)
+      if (AllPastriesCount >= 3)
       {
-        int groupsOfThree = Convert.ToInt32(Math.Floor((decimal)countOfAllPastries / 3 ));
-        pastryCost -= groupsOfThree;
+        int groupsOfThree = Convert.ToInt32(Math.Floor((decimal)AllPastriesCount / 3 ));
+        TotalPastriesCost -= groupsOfThree;
       }
-      return pastryCost;
+      return TotalPastriesCost;
     }
 
     public static List<Pastry> GetAllPastries()
